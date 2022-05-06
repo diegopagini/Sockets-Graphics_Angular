@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgChartsModule } from 'ng2-charts';
 import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
 import { environment } from 'src/environments/environment';
 
@@ -11,7 +12,12 @@ const config: SocketIoConfig = {
 };
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, SocketIoModule.forRoot(config)],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    SocketIoModule.forRoot(config),
+    NgChartsModule,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
