@@ -4,8 +4,9 @@ import { NgChartsModule } from 'ng2-charts';
 import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
 import { environment } from 'src/environments/environment';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ComponentsModule } from './components/components.module';
+import { HttpClientModule } from '@angular/common/http';
 
 const config: SocketIoConfig = {
   url: environment.wsUrl,
@@ -14,9 +15,10 @@ const config: SocketIoConfig = {
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    HttpClientModule,
     SocketIoModule.forRoot(config),
     NgChartsModule,
+    ComponentsModule,
   ],
   bootstrap: [AppComponent],
 })
